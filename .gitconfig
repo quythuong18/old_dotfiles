@@ -1,0 +1,7 @@
+[user]
+	email = quythuong0108@gmail.com
+	name = Quy Thuong
+[core]
+	editor = nvim
+[color]
+	ui = true
