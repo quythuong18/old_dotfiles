@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+PREFIX=''
+
+df_check_location='/home'
+
+get_storage()
+{
+	df_output=$(df -h $df_check_location | tail -n 1)
+
+    STO_USED=$(echo $df_output | awk '{print $3}')
+	STO_TOTAL=$(echo $df_output | awk '{print $2}')
+	
+    echo "$PREFIX $STO_USED/$STO_TOTAL"
+
+	sleep 1
+}
+
+get_storage
