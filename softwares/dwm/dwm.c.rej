@@ -1,13 +1,12 @@
 --- dwm.c
 +++ dwm.c
-@@ -708,8 +708,8 @@ drawbar(Monitor *m)
- 	/* draw status first so it can be overdrawn by tags later */
- 	if (m == selmon) { /* status is only drawn on selected monitor */
- 		drw_setscheme(drw, scheme[SchemeNorm]);
--		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
--		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
-+		tw = TEXTW(stext);
-+		drw_text(drw, m->ww - tw, 0, tw, bh, lrpad / 2, stext, 0);
- 	}
- 
- 	for (c = m->clients; c; c = c->next) {
+@@ -565,6 +566,9 @@ configurenotify(XEvent *e)
+ 			drw_resize(drw, sw, bh);
+ 			updatebars();
+ 			for (m = mons; m; m = m->next) {
++				for (c = m->clients; c; c = c->next)
++					if (c->isfullscreen)
++						resizeclient(c, m->mx, m->my, m->mw, m->mh);
+ 				XMoveResizeWindow(dpy, m->barwin, m->wx, m->by, m->ww, bh);
+ 			}
+ 			focus(NULL);

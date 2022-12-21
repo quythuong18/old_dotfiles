@@ -25,7 +25,6 @@ set.cursorline = true
 
 set.hidden = true
 
-
 set.termguicolors = true
 set.background = 'dark'
 
@@ -41,4 +40,5 @@ g.floaterm_keymap_hide = '<F4>'
 g.floaterm_position = 'topright'
 g.floaterm_width = 0.5
 g.floaterm_height = 40
+
 

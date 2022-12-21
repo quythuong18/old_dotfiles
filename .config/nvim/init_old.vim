@@ -18,23 +18,6 @@ let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 "let g:Hexokinase_highlighters = [ 'sign_column' ]
 let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'
 
-
-" Lua
-" Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
-" Plug 'kyazdani42/nvim-tree.lua'
-
-
-" html extension 
-" Plug 'mattn/emmet-vim'
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css EmmetInstall
-"let g:user_emmet_mode='n'    "only enable normal mode functions.
-" let g:user_emmet_leader_key=','
-
-" C# extension
-Plug 'OmniSharp/omnisharp-vim'
-"let g:OmniSharp_server_stdio = 0
-
 " Themes
 Plug 'tanvirtin/monokai.nvim'
 Plug 'joshdick/onedark.vim'
@@ -155,7 +138,6 @@ colorscheme one
 let g:airline_theme='one'
 "transparent
 "hi Normal guibg=NONE ctermbg=NONE 
-
 
 "NERDTree
 set modifiable

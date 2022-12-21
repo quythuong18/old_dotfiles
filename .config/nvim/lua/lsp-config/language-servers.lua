@@ -35,21 +35,25 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 -- Python language server
-require('lspconfig')['pyright'].setup{ 
+require('lspconfig')['pyright'].setup{
+    autostart = true;
     on_attach = on_attach,
     flags = lsp_flags,
 }
 require('lspconfig')['tsserver'].setup{
+    autostart = true;
     on_attach = on_attach,
     flags = lsp_flags,
 }
 -- C/C++ language server
 require('lspconfig')['clangd'].setup{
+    autostart = true;
     on_attach = on_attach,
     flags = lsp_flags,
 }
 -- Lua language server
 require'lspconfig'.sumneko_lua.setup{
+    autostart = true;
     settings = {
         Lua = {
             runtime = {

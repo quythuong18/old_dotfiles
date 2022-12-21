@@ -7,9 +7,6 @@
 
 export EDITOR="nvim"
 export BROWSER=/usr/bin/vimprobable2
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
 
 
 #alias ls='ls --color=auto'
@@ -23,8 +20,8 @@ alias gitdot='/usr/bin/git --git-dir=/home/quythuong/.dotfiles/ --work-tree=/hom
 
 PS1='[\u@\h \W]\$ '
 
-#eval "$(oh-my-posh init bash --config ~/.config/.poshthemes/agnosterplus-modded.omp.json)"
 eval "$(starship init bash)"
+#eval "$(oh-my-posh init bash --config ~/.config/.poshthemes/agnosterplus-modded.omp.json)"
 
 ibus-daemon -drxR
 neofetch

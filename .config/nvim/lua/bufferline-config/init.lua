@@ -1,59 +1,54 @@
-require('bufferline').setup {
+require("bufferline").setup
+{
     options = {
         mode = "buffers", -- set to "tabs" to only show tabpages instead
-        buffer_close_icon = '',
+        numbers = "none",
+        close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
+        -- right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+        left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
+        middle_mouse_command = "bdelete! %d",          -- can be a string | function, see "Mouse actions"
+        indicator = {
+            icon = '|', -- this should be omitted if indicator style is not 'icon'
+            style = 'underline',
+        },
+        buffer_close_icon = '',
         modified_icon = '●',
-        close_icon = '',
         left_trunc_marker = '',
         right_trunc_marker = '',
         max_name_length = 18,
         max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
         truncate_names = true, -- whether or not tab names should be truncated
-        tab_size = 18,
-        offsets = { { filetype = "NvimTree", text = "File Explorer", separator = true, text_align = "center"} },
-        show_buffer_icons = true,
-        show_buffer_close_icons = true,
-        highlights = {
-            fill = {
-                bg = {
-                    attribute = "fg",
-                    highlight = "Pmenu"
-                }
+        tab_size = 20,
+        diagnostics = "nvim_lsp",
+        diagnostics_update_in_insert = false,
+        -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
+        -- NOTE: this will be called a lot so don't do any heavy processing here
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "",
+                text_align = "left",
+                separator = true
             }
         },
-        indicator = {
-            icon = '▎', -- this should be omitted if indicator style is not 'icon'
-            style = 'icon',
+        color_icons = true , -- whether or not to add the filetype icon highlights
+        show_buffer_icons = true, -- disable filetype icons for buffers
+        show_buffer_close_icons = true ,
+        show_buffer_default_icon = true , -- whether or not an unrecognised filetype should show a default icon
+        show_close_icon = true,
+        show_tab_indicators = false,
+        show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
+        persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+        -- can also be a table containing 2 custom separators
+        -- [focused and unfocused]. eg: { '|', '|' }
+        separator_style = "thin",
+        enforce_regular_tabs = false,
+        always_show_bufferline = true,
+        hover = {
+            enabled = true,
+            delay = 200,
+            reveal = {'close'}
         },
-        separator_style = 'thick',
-        custom_areas = {
-            right = function()
-                local result = {}
-                local seve = vim.diagnostic.severity
-                local error = #vim.diagnostic.get(0, {severity = seve.ERROR})
-                local warning = #vim.diagnostic.get(0, {severity = seve.WARN})
-                local info = #vim.diagnostic.get(0, {severity = seve.INFO})
-                local hint = #vim.diagnostic.get(0, {severity = seve.HINT})
-
-                if error ~= 0 then
-                    table.insert(result, {text = "  " .. error, fg = "#EC5241"})
-                end
-
-                if warning ~= 0 then
-                    table.insert(result, {text = "  " .. warning, fg = "#EFB839"})
-                end
-
-                if hint ~= 0 then
-                    table.insert(result, {text = "  " .. hint, fg = "#A3BA5E"})
-                end
-
-                if info ~= 0 then
-                    table.insert(result, {text = "  " .. info, fg = "#7EA9A7"})
-                end
-                return result
-            end,
+        sort_by = 'buffers',
         }
-    }
 }
-
-

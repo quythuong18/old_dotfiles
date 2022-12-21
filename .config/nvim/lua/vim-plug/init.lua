@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
 -- Themes
+Plug 'tjdevries/colorbuddy.nvim' -- color buddy
 Plug 'tanvirtin/monokai.nvim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
@@ -16,19 +17,21 @@ Plug 'junegunn/seoul256.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug('kyoz/purify', {rtp = 'vim' })
 Plug 'vim-python/python-syntax'
-Plug 'EdenEast/nightfox.nvim' 
+Plug 'EdenEast/nightfox.nvim'
+Plug 'svrana/neosolarized.nvim'
 
 -- status bar
 Plug 'nvim-lualine/lualine.nvim'
 -- buffer bar
-Plug('akinsho/bufferline.nvim', { tag = 'v3.*' })
+Plug('akinsho/bufferline.nvim', {tag = 'v3.*'})
 
 -- Hexcode color background
 Plug 'norcalli/nvim-colorizer.lua'
 
 -- File browser
 Plug 'nvim-tree/nvim-tree.lua'
-Plug 'nvim-tree/nvim-web-devicons' -- optional, for file icons
+-- For file icons
+Plug 'nvim-tree/nvim-web-devicons'
 
 -- Autocomplete
 Plug 'jiangmiao/auto-pairs'
@@ -53,6 +56,12 @@ Plug 'onsails/lspkind.nvim'
 -- Write file with sudo
 Plug 'lambdalisue/suda.vim'
 
+-- Tree sitter
+Plug('nvim-treesitter/nvim-treesitter', {
+    ['do'] = function()
+    vim.cmd('TSUpdate');
+    end
+})
 
 
 vim.call('plug#end')
