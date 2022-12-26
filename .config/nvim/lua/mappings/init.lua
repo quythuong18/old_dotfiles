@@ -1,5 +1,4 @@
 
-
 local function map(mode, lhs, rhs, opts)
   local options = { noremap=true, silent=true }
   if opts then
@@ -18,10 +17,6 @@ map('v', 'nn', '<ESC>')
 -- Press jj when in Command mode, to go back to normal mode
 -- cnoremap jj <ESC>
 map('c', 'jj', '<ESC>')
-
--- Press ff when in normal mode, to save file
---nnoremap ff :w<CR>
-map('n', 'ff', ':w<CR>')
 
 -- Close tab within buffer's disappearing
 map('n', 'mm', ':bd<CR>')
@@ -50,3 +45,10 @@ map('n', '<leader>9', ':BufferLineGoToBuffer 9<CR>')
 map('n', '<leader>$', ':BufferLineGoToBuffer -1<CR>')
 map('n', '<C-n>', ':BufferLineCycleNext<CR>')
 map('n', '<C-p>', ':BufferLineCyclePrev<CR>')
+
+-- Telescope mappings
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})

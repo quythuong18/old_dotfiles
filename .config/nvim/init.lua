@@ -18,6 +18,7 @@ vim.cmd [[
     set winhighlight=Normal:MyNormal,NormalNC:MyNormalNC
 
     hi NormalNC guibg=xxx
+    hi Normal guibg=xxx
     au WinEnter * setl cursorline
     au WinLeave * setl nocursorline
 

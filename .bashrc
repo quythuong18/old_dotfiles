@@ -8,7 +8,6 @@
 export EDITOR="nvim"
 export BROWSER=/usr/bin/vimprobable2
 
-
 #alias ls='ls --color=auto'
 alias ls='logo-ls'
 alias nf='neofetch'
@@ -23,7 +22,6 @@ PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
 #eval "$(oh-my-posh init bash --config ~/.config/.poshthemes/agnosterplus-modded.omp.json)"
 
-ibus-daemon -drxR
 neofetch
 . ~/softwares/z.sh
 

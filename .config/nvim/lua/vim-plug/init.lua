@@ -62,6 +62,9 @@ Plug('nvim-treesitter/nvim-treesitter', {
     vim.cmd('TSUpdate');
     end
 })
+-- Telescope is a highly extendable fuzzy finder over lists
+Plug 'nvim-lua/plenary.nvim'
+Plug('nvim-telescope/telescope.nvim', {  tag  = '0.1.0' })
 
 
 vim.call('plug#end')
