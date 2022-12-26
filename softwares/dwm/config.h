@@ -3,7 +3,7 @@
 /* appearance */
 /* appearance */
 #include<X11/XF86keysym.h>
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 3;        /* gaps between windows */
 //static const unsigned int snap      = 5;       /* snap pixel */
 static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
@@ -47,12 +47,12 @@ static const char black[]       = "#000000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	//[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeNorm] = { white, dark_bg_color, col_2 }, 
+	[SchemeNorm] = { white, dark_bg_color, "#010230" }, 
 	[SchemeSel]  = { white, col_2,  col_gray1 },
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "",""};
+static const char *tags[] = { "", "", "", "","", ""};
 
 
 static const Rule rules[] = {
@@ -119,10 +119,12 @@ static const Key keys[] = {
 	{ MODKEY,			XK_F11,    spawn, 	   {.v = upvol } },
 	{ MODKEY,			XK_F9,    spawn, 	   {.v = mutevol } },
 
-	{ 0,			XF86XK_MonBrightnessUp,  	spawn,	{.v = light_up} },
-	{ 0,			XF86XK_MonBrightnessDown,	spawn,	{.v = light_down} },
-	{ MODKEY,                       XK_p,      spawn,          {.v = rofi_launcher } },
-	{ Mod4Mask,                       XK_l,      spawn,          {.v = rofi_powermenu } },
+    { 0,                   			XF86XK_MonBrightnessUp,  	spawn,	{.v = light_up} },
+    { 0,			                XF86XK_MonBrightnessDown,	spawn,	{.v = light_down} },
+    { MODKEY,			            XK_F8,  	spawn,	{.v = light_up} },
+    { MODKEY,			            XK_F7,	spawn,	{.v = light_down} },
+    { MODKEY,                       XK_p,      spawn,          {.v = rofi_launcher } },
+	{ Mod4Mask,                       XK_l,    spawn,          {.v = rofi_powermenu } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
