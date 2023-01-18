@@ -44,6 +44,7 @@ require('lspconfig')['tsserver'].setup{
     autostart = true;
     on_attach = on_attach,
     flags = lsp_flags,
+    filetype = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "html" }
 }
 -- C/C++ language server
 require('lspconfig')['clangd'].setup{
@@ -75,3 +76,25 @@ require'lspconfig'.sumneko_lua.setup{
         },
     },
 }
+
+-- html
+local lspconfig = require('lspconfig')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
+lspconfig.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+    init_options = {
+      html = {
+        options = {
+          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+          ["bem.enabled"] = true,
+        },
+      },
+    }
+})

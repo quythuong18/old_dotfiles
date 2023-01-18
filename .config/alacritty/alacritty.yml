@@ -1,5 +1,5 @@
   import:
-    - ~/.config/alacritty/.alacritty-colorscheme/themes/dracula.yaml
+    - ~/.config/alacritty/.alacritty-colorscheme/themes/breeze.yaml
 
   window:
     padding:

@@ -22,7 +22,7 @@ map('c', 'jj', '<ESC>')
 map('n', 'mm', ':bd<CR>')
 
 -- Unhighlight
-map('n', '\\', ':nohl<CR>')
+-- map('n', '\\', ':nohl<CR>')
 
 -- Open file browser
 map('n', '<F12>', ':NvimTreeToggle<CR>')

@@ -6,7 +6,6 @@
 [[ $- != *i* ]] && return
 
 export EDITOR="nvim"
-export BROWSER=/usr/bin/vimprobable2
 
 #alias ls='ls --color=auto'
 alias ls='logo-ls'
@@ -16,12 +15,18 @@ alias ll='logo-ls -l'
 alias lf='lfub'
 alias pacman='sudo pacman'
 alias gitdot='/usr/bin/git --git-dir=/home/quythuong/.dotfiles/ --work-tree=/home/quythuong'
+alias tlg='Telegram'
+alias cd..='cd ..'
+alias fm6tmod='fm6000 -f ~/others/arch_logo.txt -o "Arch Linux" -d "dwm" -c blue'
 
 PS1='[\u@\h \W]\$ '
 
-eval "$(starship init bash)"
-#eval "$(oh-my-posh init bash --config ~/.config/.poshthemes/agnosterplus-modded.omp.json)"
+#eval "$(starship init bash)"
+eval "$(oh-my-posh init bash --config ~/.config/.poshthemes/catppuccin_mocha-modded.omp.json)"
 
-neofetch
+fm6tmod
 . ~/softwares/z.sh
+
+
+
 

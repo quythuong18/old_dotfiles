@@ -6,6 +6,7 @@ set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 4
 set.tabstop = 4
+set.syntax = 'on'
 
 set.hlsearch = true
 set.ignorecase = true
@@ -41,4 +42,7 @@ g.floaterm_position = 'topright'
 g.floaterm_width = 0.5
 g.floaterm_height = 40
 
+-- Emmet
+g.user_emmet_mode = 'a'
+g.user_emmet_leader_key = ','
 

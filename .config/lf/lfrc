@@ -6,7 +6,7 @@ set drawbox true
 set cleaner '~/.config/lf/cleaner'
 
 map D delete
-
+map . set hidden!
 
 # interpreter for shell commands
 set shell sh

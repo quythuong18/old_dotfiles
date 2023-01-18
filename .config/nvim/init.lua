@@ -9,6 +9,7 @@ require('lsp-config.language-servers')
 require('lsp-config.nvim-cmp')
 require('nvim-colorizer')
 require('treesitter-config')
+require('alpha-nvim-config')
 
 -- colorscheme field
 vim.cmd('colorscheme purify')
@@ -17,8 +18,6 @@ vim.cmd('colorscheme purify')
 vim.cmd [[
     set winhighlight=Normal:MyNormal,NormalNC:MyNormalNC
 
-    hi NormalNC guibg=xxx
-    hi Normal guibg=xxx
     au WinEnter * setl cursorline
     au WinLeave * setl nocursorline
 
