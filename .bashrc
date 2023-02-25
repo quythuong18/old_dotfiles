@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export EDITOR="nvim"
+
 
 #alias ls='ls --color=auto'
 alias ls='logo-ls'
@@ -16,8 +16,9 @@ alias lf='lfub'
 alias pacman='sudo pacman'
 alias gitdot='/usr/bin/git --git-dir=/home/quythuong/.dotfiles/ --work-tree=/home/quythuong'
 alias tlg='Telegram'
-alias cd..='cd ..'
-alias fm6tmod='fm6000 -f ~/others/arch_logo.txt -o "Arch Linux" -d "dwm" -c blue'
+alias fm6tmod='~/softwares/fm6000 -f ~/others/arch_logo.txt -o "Arch Linux" -d "dwm" -c green'
+alias say='fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n'
+alias py='python'
 
 PS1='[\u@\h \W]\$ '
 
@@ -29,4 +30,20 @@ fm6tmod
 
 
 
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/quythuong/softwares/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/quythuong/softwares/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/quythuong/softwares/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/quythuong/softwares/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
 

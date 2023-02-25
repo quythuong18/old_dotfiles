@@ -8,6 +8,8 @@
 # merge in defaults and keymaps
 
 
+#unikey
+ibus start &
 #flameshot: snipping tool
 flameshot &
 

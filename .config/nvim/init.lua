@@ -1,4 +1,4 @@
-print("Hello Quy Thuong!")
+--print("Hello Quy Thuong!")
 require('settings')
 require('vim-plug')
 require('mappings')
@@ -11,17 +11,16 @@ require('nvim-colorizer')
 require('treesitter-config')
 require('alpha-nvim-config')
 
--- colorscheme field
-vim.cmd('colorscheme purify')
 
 
 vim.cmd [[
+    colorscheme purify
     set winhighlight=Normal:MyNormal,NormalNC:MyNormalNC
-
+    
     au WinEnter * setl cursorline
     au WinLeave * setl nocursorline
-
-    set nofoldenable
-
+    
+    
     command! -nargs=0 Sw w !sudo tee % > /dev/null
 ]]
+

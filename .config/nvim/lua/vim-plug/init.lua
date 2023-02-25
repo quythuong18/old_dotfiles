@@ -19,6 +19,7 @@ Plug('kyoz/purify', {rtp = 'vim' })
 Plug 'vim-python/python-syntax'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'svrana/neosolarized.nvim'
+Plug 'ChrisKempson/Tomorrow-Theme'
 
 -- status bar
 Plug 'nvim-lualine/lualine.nvim'

@@ -1,12 +1,12 @@
+set ratios 1:2:3
 
 
 
 set icons true
 set drawbox true
 set cleaner '~/.config/lf/cleaner'
+set previewer ~/.config/lf/preview
 
-map D delete
-map . set hidden!
 
 # interpreter for shell commands
 set shell sh
@@ -30,16 +30,6 @@ set ifs "\n"
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 
-# use enter for shell commands
-map <enter> shell
-
-# execute current file (must be executable)
-map x $$f
-map X !$f
-
-# dedicated keys for file opener actions
-map o &mimeopen $f
-map O $mimeopen --ask $f
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
@@ -53,8 +43,7 @@ cmd open &{{
 }}
 
 # define a custom 'rename' command without prompt for overwrite
-# cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-# map r push :rename<space>
+cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
 # make sure trash folder exists
 %mkdir -p ~/.trash
@@ -62,8 +51,6 @@ cmd open &{{
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
 cmd trash %set -f; mv $fx ~/.trash
-
-
 
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
@@ -96,3 +83,31 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$nvim \$fx";;
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+#================================================MAPPING AREA==========================================================
+# use enter for shell commands
+# map <enter> shell
+map <enter> open
+map . set hidden!
+
+
+# execute current file (must be executable)
+map x $$f
+map X !$f
+
+# dedicated keys for file opener actions
+map o &mimeopen $f
+map O $mimeopen --ask $f
+
+map r push :rename<space>
+map D trash
+map e extract
+map i $LESSOPEN='| ~/.config/lf/pv.sh %s' less -R $f
+map z zip
+map <esc> quit

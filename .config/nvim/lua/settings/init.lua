@@ -21,6 +21,7 @@ set.scrolloff = 5
 set.fileencoding = 'utf-8'
 
 set.number = true
+set.mouse = 'c'
 set.relativenumber = true
 set.cursorline = true
 
@@ -29,7 +30,7 @@ set.hidden = true
 set.termguicolors = true
 set.background = 'dark'
 
-set.ft = 'nasm'
+-- set.ft = 'nasm'
 
 set.completeopt = 'menu,menuone,noselect'
 
@@ -40,7 +41,7 @@ g.floaterm_keymap_kill = '<F3>'
 g.floaterm_keymap_hide = '<F4>'
 g.floaterm_position = 'topright'
 g.floaterm_width = 0.5
-g.floaterm_height = 40
+g.floaterm_height = 35
 
 -- Emmet
 g.user_emmet_mode = 'a'
