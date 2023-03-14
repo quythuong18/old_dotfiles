@@ -72,6 +72,14 @@ Plug 'goolord/alpha-nvim'
 
 -- HTML autocompletion
 Plug 'mattn/emmet-vim'
+-- Mason nvim
+Plug 'williamboman/mason.nvim'
+-- Mason LSP config
+Plug 'williamboman/mason-lspconfig.nvim'
+-- Quick comment
+Plug 'numToStr/Comment.nvim'
+-- Transparent background
+Plug 'xiyaowong/nvim-transparent'
 
 vim.call('plug#end')
 

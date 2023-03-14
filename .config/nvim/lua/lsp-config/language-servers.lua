@@ -6,7 +6,7 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -34,6 +34,7 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
+
 -- Python language server
 require('lspconfig')['pyright'].setup{
     autostart = true;
@@ -85,6 +86,26 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
+-- require'lspconfig'.cssls.setup {
+--     autostart = true;
+--     on_attach = on_attach,
+--     --flags = lsp_flags,
+--     cmd = { "vscode-css-language-server", "--stdio" },
+--     filetypes = { "css", "scss", "less" },
+--     settings = {
+--         css = {
+--             validate = true
+--         },
+--         less = {
+--             validate = true
+--         },
+--         scss = {
+--             validate = true
+--         }
+--     }
+-- }
+require'lspconfig'.cssmodules_ls.setup{}
+
 lspconfig.emmet_ls.setup({
     -- on_attach = on_attach,
     capabilities = capabilities,
@@ -96,5 +117,8 @@ lspconfig.emmet_ls.setup({
           ["bem.enabled"] = true,
         },
       },
+
     }
 })
+
+require('lspconfig')['sqls'].setup{}

@@ -46,6 +46,7 @@ cmd open &{{
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
 # make sure trash folder exists
+
 %mkdir -p ~/.trash
 
 # move current file or selected files to trash folder
@@ -89,7 +90,16 @@ cmd open &{{
         *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
     esac
 }}
-
+cmd mkdir ${{
+    printf "Dir name: "
+    read ans
+    mkdir $ans
+}}
+cmd mkfile ${{
+    printf "File name: "
+    read ans
+    $EDITOR $ans
+}}
 #================================================MAPPING AREA==========================================================
 # use enter for shell commands
 # map <enter> shell
@@ -104,6 +114,8 @@ map X !$f
 # dedicated keys for file opener actions
 map o &mimeopen $f
 map O $mimeopen --ask $f
+
+map a mkfile
 
 map r push :rename<space>
 map D trash
