@@ -3,7 +3,8 @@ require('settings')
 require('vim-plug')
 require('mappings')
 require('lualine-config')
-require('bufferline-config')
+--require('bufferline-config')
+require('luatab-nvim')
 require('nvim-tree-config')
 require('lsp-config.language-servers')
 require('lsp-config.nvim-cmp')
@@ -14,9 +15,8 @@ require('mason-nvim')
 require('others')
 
 
-
 vim.cmd [[
-    colorscheme gruvbox
+    colorscheme bluloco
     set winhighlight=Normal:MyNormal,NormalNC:MyNormalNC
     highlight Normal ctermbg=none guibg=none
     

@@ -20,11 +20,19 @@ Plug 'vim-python/python-syntax'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'svrana/neosolarized.nvim'
 Plug 'ChrisKempson/Tomorrow-Theme'
+Plug 'NTBBloodbath/doom-one.nvim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'rktjmp/lush.nvim'
+Plug 'uloco/bluloco.nvim'
 
 -- status bar
 Plug 'nvim-lualine/lualine.nvim'
 -- buffer bar
-Plug('akinsho/bufferline.nvim', {tag = 'v3.*'})
+-- Plug('akinsho/bufferline.nvim', {tag = 'v3.*'})
+Plug 'alvarosevilla95/luatab.nvim'
+
+-- highlight the word under cursor
+Plug 'RRethy/vim-illuminate'
 
 -- Hexcode color background
 Plug 'norcalli/nvim-colorizer.lua'
@@ -81,5 +89,10 @@ Plug 'numToStr/Comment.nvim'
 -- Transparent background
 Plug 'xiyaowong/nvim-transparent'
 
+Plug 'folke/noice.nvim'
+Plug 'MunifTanjim/nui.nvim'
+
+-- hex edit
+Plug 'RaafatTurki/hex.nvim'
 vim.call('plug#end')
 
