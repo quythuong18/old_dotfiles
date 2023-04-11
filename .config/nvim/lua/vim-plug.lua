@@ -28,11 +28,8 @@ Plug 'uloco/bluloco.nvim'
 -- status bar
 Plug 'nvim-lualine/lualine.nvim'
 -- buffer bar
--- Plug('akinsho/bufferline.nvim', {tag = 'v3.*'})
-Plug 'alvarosevilla95/luatab.nvim'
+Plug('akinsho/bufferline.nvim', {tag = 'v3.*'})
 
--- highlight the word under cursor
-Plug 'RRethy/vim-illuminate'
 
 -- Hexcode color background
 Plug 'norcalli/nvim-colorizer.lua'
@@ -92,7 +89,9 @@ Plug 'xiyaowong/nvim-transparent'
 Plug 'folke/noice.nvim'
 Plug 'MunifTanjim/nui.nvim'
 
--- hex edit
-Plug 'RaafatTurki/hex.nvim'
+-- Markdown preview
+Plug 'iamcco/markdown-preview.nvim'
+
+
 vim.call('plug#end')
 

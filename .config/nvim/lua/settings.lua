@@ -43,6 +43,7 @@ g.floaterm_position = 'topright'
 g.floaterm_width = 0.5
 g.floaterm_height = 35
 
+
 -- Transparent
 g.transparent_enabled = 1
 g.transparent_factor = 50
@@ -51,3 +52,4 @@ g.transparent_factor = 50
 g.user_emmet_mode = 'a'
 g.user_emmet_leader_key = ','
 
+g.mkdp_browser = 'firefox'

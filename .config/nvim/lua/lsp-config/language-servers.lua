@@ -1,5 +1,5 @@
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<space>f', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
@@ -41,12 +41,6 @@ require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-require('lspconfig')['tsserver'].setup{
-    autostart = true;
-    on_attach = on_attach,
-    flags = lsp_flags,
-    filetype = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "html" }
-}
 -- C/C++ language server
 require('lspconfig')['clangd'].setup{
     autostart = true;
@@ -82,32 +76,22 @@ require'lspconfig'.sumneko_lua.setup{
 local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
+require'lspconfig'.html.setup{
+    capabilities = capabilities,
+    init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = false,
+            javascript = true
+        },
+        provideFormatter = true
+    }
 }
--- require'lspconfig'.cssls.setup {
---     autostart = true;
---     on_attach = on_attach,
---     --flags = lsp_flags,
---     cmd = { "vscode-css-language-server", "--stdio" },
---     filetypes = { "css", "scss", "less" },
---     settings = {
---         css = {
---             validate = true
---         },
---         less = {
---             validate = true
---         },
---         scss = {
---             validate = true
---         }
---     }
--- }
+-- CSS 
 require'lspconfig'.cssmodules_ls.setup{}
-
+-- HTML CSS autocomplete
 lspconfig.emmet_ls.setup({
-    -- on_attach = on_attach,
+    on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
     init_options = {
@@ -117,8 +101,16 @@ lspconfig.emmet_ls.setup({
           ["bem.enabled"] = true,
         },
       },
-
     }
 })
+-- JS TS LSP
+require('lspconfig')['tsserver'].setup{
+    autostart = true;
+    on_attach = on_attach,
+    flags = lsp_flags,
+    filetype = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "html" }
+}
 
 require('lspconfig')['sqls'].setup{}
+require('lspconfig')['marksman'].setup{}
+

@@ -116,6 +116,7 @@ map o &mimeopen $f
 map O $mimeopen --ask $f
 
 map a mkfile
+map A mkdir
 
 map r push :rename<space>
 map D trash

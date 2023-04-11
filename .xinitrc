@@ -16,14 +16,22 @@ flameshot &
 #Compositor
 picom &
 
+
 #wallpaper
 nitrogen --restore &
 
 #DWM status
 /home/quythuong/softwares/dwmbar/dwmbar &
 
-#DWM execute
+# polybar
+# polybar &
+
+conky &
+
+#WM execute
 exec dwm
+
+
 
 
 
