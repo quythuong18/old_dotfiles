@@ -24,7 +24,8 @@ Plug 'NTBBloodbath/doom-one.nvim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'rktjmp/lush.nvim'
 Plug 'uloco/bluloco.nvim'
-
+Plug 'Mofiqul/dracula.nvim'
+Plug('catppuccin/nvim', { as = 'catppuccin' })
 -- status bar
 Plug 'nvim-lualine/lualine.nvim'
 -- buffer bar
@@ -68,6 +69,8 @@ Plug('nvim-treesitter/nvim-treesitter', {
     vim.cmd('TSUpdate');
     end
 })
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+
 -- Telescope is a highly extendable fuzzy finder over lists
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', {  tag  = '0.1.0' })
@@ -85,13 +88,23 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'numToStr/Comment.nvim'
 -- Transparent background
 Plug 'xiyaowong/nvim-transparent'
+-- For lsp's UI
+Plug 'kkharji/lspsaga.nvim'
+-- null-ls
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
+-- For neovim GUI
 Plug 'folke/noice.nvim'
 Plug 'MunifTanjim/nui.nvim'
+Plug 'rcarriga/nvim-notify'
 
 -- Markdown preview
 Plug 'iamcco/markdown-preview.nvim'
 
+-- Indentation guides
+Plug 'lukas-reineke/indent-blankline.nvim'
+-- Speech motion
+Plug 'phaazon/hop.nvim'
 
+-- ========================================================END===================================
 vim.call('plug#end')
-

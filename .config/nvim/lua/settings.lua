@@ -8,7 +8,9 @@ set.shiftwidth = 4
 set.tabstop = 4
 set.syntax = 'on'
 
+-- highlight search 
 set.hlsearch = true
+-- Case insensitive searching
 set.ignorecase = true
 set.smartcase = true
 
@@ -19,20 +21,28 @@ set.splitbelow = true
 set.wrap = false
 set.scrolloff = 5
 set.fileencoding = 'utf-8'
-
 set.number = true
-set.mouse = 'c'
+set.mouse = 'a'
 set.relativenumber = true
 set.cursorline = true
-
 set.hidden = true
 
 set.termguicolors = true
 set.background = 'dark'
 
--- set.ft = 'nasm'
+-- Sync clipboard between OS and nvim
+-- set.clipboard = 'unnamedplus'
 
+-- Save undo history
+set.undofile = true
+-- Set the height of pop-up autocomplete menu
+set.pumheight = 10
+
+-- Set completeopt to have a better completion experience
 set.completeopt = 'menu,menuone,noselect'
+
+-- Auto break to a soft-line if the line too long with the width of neovim windows
+set.wrap = true
 
 -- Internal terminal
 g.floaterm_keymap_new = '<F7>'
