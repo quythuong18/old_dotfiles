@@ -15,9 +15,9 @@ vim.g.mapleader = ' '
 map('n', 'mm', ':bd<CR>')
 -- Save file
 map('n', '<C-s>', ':w<CR>')
--- Copy all 
+-- Copy all
 map('n', '<C-a>', ':%y+<CR>')
-map('n', '<C-c>', ':.yank+<CR>')
+map('v', '<C-c>', ':yank+<CR>')
 -- clear search highlighting
 map('n', '<leader>h', ':nohl<CR>')
 

@@ -1,3 +1,4 @@
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
@@ -76,9 +77,5 @@ lspconfig.emmet_ls.setup({
 -- JS TS LSP
 require('lspconfig')['tsserver'].setup{
     autostart = true;
-    filetype = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "html" }
+    filetype = {  "html", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"}
 }
-
-require'lspconfig'.sqlls.setup{}
-require('lspconfig')['marksman'].setup{}
-

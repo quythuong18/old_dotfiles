@@ -29,5 +29,8 @@ vim.cmd [[
     
     command! -nargs=0 Sw w !sudo tee % > /dev/null
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    filetype on
+    filetype plugin on
+    set omnifunc=syntaxcomplete#Complete
 ]]
 require('bufferline-config')

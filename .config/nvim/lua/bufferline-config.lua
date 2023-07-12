@@ -27,7 +27,7 @@ require("bufferline").setup
         offsets = {
             {
                 filetype = "NvimTree",
-                text = "Nerd tree",
+                text = "Tree",
                 text_align = "center",
                 separator = false
             }

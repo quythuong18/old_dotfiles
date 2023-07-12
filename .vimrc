@@ -48,16 +48,17 @@ nnoremap ;; :nohl<CR>
 " Start NERDTree and put the cursor back in the other window.
 "autocmd VimEnter * NERDTree | wincmd p
 
+syntax enable
 set fenc=utf-8
 set number
 set relativenumber
 set mouse=a
 set autoindent
-syntax on
+
 
 set t_Co=256
 set cursorline
-colorscheme sonokai
+" colorscheme sonokai
 
 
 " show existing tab with 4 spaces width
@@ -66,3 +67,10 @@ set tabstop=4
 set shiftwidth=4
 
 
+filetype plugin on
+" enter the current millenium
+set nocompatible
+
+"Finding file
+set path+=**
+set wildmenu

@@ -1,10 +1,8 @@
 set ratios 1:2:3
 
-
-
 set icons true
 set drawbox true
-set cleaner '~/.config/lf/cleaner'
+set cleaner ~/.config/lf/cleaner
 set previewer ~/.config/lf/preview
 
 
@@ -100,7 +98,7 @@ cmd mkfile ${{
     read ans
     $EDITOR $ans
 }}
-#================================================ MAPPING AREA ==========================================================
+#================================================ MAPPINGS AREA ==========================================================
 # use enter for shell commands
 # map <enter> shell
 map <enter> open

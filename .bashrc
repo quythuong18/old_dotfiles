@@ -17,6 +17,8 @@ alias py='python'
 alias webcam='mpv /dev/video0'
 alias rambox='~/softwares/rambox'
 alias connect_earphone='~/softwares/connect_earphone.sh'
+alias nv="nvim"
+alias nc="NVIM_APPNAME=NvChad nvim"
 
 
 #PS1='[\u@\h \W]\$ '
