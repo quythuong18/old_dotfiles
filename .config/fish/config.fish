@@ -1,8 +1,8 @@
+
 # Start X at login
-if status --is-login
-  if test -z "$DISPLAY" -a $XDG_VTNR = 1
-    exec startx
-  end
+if ! timeout 1s xset q &>/dev/null
+    ~/softwares/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green
+    startx
 end
 
 if status is-interactive
@@ -11,7 +11,7 @@ if status is-interactive
 end
 
 function fish_greeting
-    random choice "Hello!" "Hi" "G'day" "Howdy" "Hi, Quy Thuong!"
+    random choice "Perfection isn't good enough." "My theater is the mind." "You shoot to kill, you better hit the heart." "Howdy" "Hi, Quy Thuong!" "In another parallel world...!" "Art is worth the pain." "Death is certain, but killing doesn't have to be ugly." "Which is the lie? The mask, or my face?"
 end
 
 function fish_prompt -d "Write out the prompt"
@@ -22,24 +22,26 @@ function fish_prompt -d "Write out the prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
-alias ls="logo-ls"
+alias fm6tmod="~/softwares/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green"
+#alias ls="logo-ls"
 alias nf="neofetch"
+alias nfs="fm6tmod"
 alias cls="clear"
-alias ll="logo-ls -l"
 alias lf="lfrun"
 alias pacman="sudo pacman"
 alias gitdot="/usr/bin/git --git-dir=/home/quythuong/.dotfiles/ --work-tree=/home/quythuong"
-alias fm6tmod="~/softwares/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green"
-alias say="fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n"
 alias py="python"
-alias webcam="v4l2-ctl --set-fmt-video=width=600; mpv /dev/video0"
 alias connect_earphone="~/softwares/connect_earphone.sh"
+alias rambox="~/softwares/rambox"
+alias nv="nvim"
 alias nc="NVIM_APPNAME=NvChad nvim"
 
+set -x PATH $PATH ~/softwares
+set -x PATH $PATH ~/softwares/Discord
+set -x PATH $PATH ~/.local/bin
+
+#set PS1 '\[\e]133;k;start_kitty\a\]\[\e]133;A\a\]\[\e]133;k;end_kitty\a\]\[\] \[\]\[\]quythuong@ArchLinux \[\]\[\]~ \[\]\[\]❯\[\]\[\] \[\e]133;k;start_suffix_kitty\a\]\[\e[5 q\]\[\e]2;\w\a\]\[\e]133;k;end_suffix_kitty\a\]'
+
 oh-my-posh init fish --config ~/.config/.poshthemes/catppuccin_mocha-modded.omp.json | source
-    
-fm6tmod
-
-
-
-
+#starship init fish | source 
+source ~/.local/share/icons-in-terminal/icons.fish
