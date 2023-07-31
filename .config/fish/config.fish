@@ -1,7 +1,7 @@
 
 # Start X at login
 if ! timeout 1s xset q &>/dev/null
-    ~/softwares/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green
+    ~/.local/bin/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green
     startx
 end
 
@@ -22,7 +22,7 @@ function fish_prompt -d "Write out the prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
-alias fm6tmod="~/softwares/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green"
+alias fm6tmod="~/.local/bin/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green"
 #alias ls="logo-ls"
 alias nf="neofetch"
 alias nfs="fm6tmod"
@@ -31,13 +31,11 @@ alias lf="lfrun"
 alias pacman="sudo pacman"
 alias gitdot="/usr/bin/git --git-dir=/home/quythuong/.dotfiles/ --work-tree=/home/quythuong"
 alias py="python"
-alias connect_earphone="~/softwares/connect_earphone.sh"
-alias rambox="~/softwares/rambox"
+alias connect_earphone="~/.local/bin/connect_earphone.sh"
+alias rambox="~/.local/bin/rambox"
 alias nv="nvim"
 alias nc="NVIM_APPNAME=NvChad nvim"
 
-set -x PATH $PATH ~/softwares
-set -x PATH $PATH ~/softwares/Discord
 set -x PATH $PATH ~/.local/bin
 
 #set PS1 '\[\e]133;k;start_kitty\a\]\[\e]133;A\a\]\[\e]133;k;end_kitty\a\]\[\] \[\]\[\]quythuong@ArchLinux \[\]\[\]~ \[\]\[\]❯\[\]\[\] \[\e]133;k;start_suffix_kitty\a\]\[\e[5 q\]\[\e]2;\w\a\]\[\e]133;k;end_suffix_kitty\a\]'

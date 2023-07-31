@@ -32,8 +32,8 @@ map('n', '<C-u>', '<C-u>zz')
 map('n', '<leader><leader>', ':HopWord<CR>')
 
 -- Bufferline mappings
-map('n', '<C-n>', ':bnext<CR>')
-map('n', '<C-p>', ':bprev<CR>')
+map('n', '<C-.>', ':bnext<CR>')
+map('n', '<C-,>', ':bprev<CR>')
 
 -- Lspsaga
 map('n', '<C-j>', ':Lspsaga diagnostic_jump_next<CR>')
