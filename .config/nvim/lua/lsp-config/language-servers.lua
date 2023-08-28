@@ -79,3 +79,4 @@ require('lspconfig')['tsserver'].setup{
     autostart = true;
     filetype = {  "html", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"}
 }
+require'lspconfig'.jdtls.setup{}

@@ -36,7 +36,7 @@ require('notify').setup({
 --     },
 --     cmdline = {
 --         enabled = true,
---         view = "cmdline_popup",
+--         view = "cmdline",
 --     },
 -- })
 -- indentation guides

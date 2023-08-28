@@ -30,6 +30,8 @@ set.hidden = true
 set.termguicolors = true
 set.background = 'dark'
 
+set.filetype = 'set'
+
 -- Sync clipboard between OS and nvim
 -- set.clipboard = 'unnamedplus'
 

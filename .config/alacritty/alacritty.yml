@@ -12,22 +12,22 @@
       #background_opacity: 0.7
   font:
     normal:
-      family: "Cascadia Code"
+      family: "Ac437 Acer VGA 8x8"
       style: Regular
 
     bold:
-      family: "FiraCode Nerd Font"
+      family: "Ac437 Acer VGA 8x8"
       style: Regular
 
     italic:
-      family: "FiraCode Nerd Font"
+      family: "Ac437 Acer VGA 8x8"
       style: Regular
 
     bold_italic:
-      family: "FiraCode Nerd Font"
+      family: "Ac437 Acer VGA 8x8"
       style: Bold Italic
 
-    size: 10
+    size: 9
 
 
 

@@ -21,9 +21,11 @@ require('alpha-nvim-config')
 require('mason-nvim')
 require('others')
 require('lspsaga-nvim')
+
 vim.cmd [[
-    colorscheme dracula
-    
+       
+    colorscheme purify
+
     au WinEnter * setl cursorline
     au WinLeave * setl nocursorline
     

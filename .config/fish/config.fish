@@ -1,4 +1,3 @@
-
 # Start X at login
 if ! timeout 1s xset q &>/dev/null
     ~/.local/bin/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green
@@ -23,7 +22,7 @@ function fish_prompt -d "Write out the prompt"
 end
 
 alias fm6tmod="~/.local/bin/fm6000 -f ~/others/arch_logo.txt -o 'Arch Linux' -d 'dwm' -c green"
-#alias ls="logo-ls"
+alias ls="logo-ls"
 alias nf="neofetch"
 alias nfs="fm6tmod"
 alias cls="clear"
@@ -36,10 +35,18 @@ alias rambox="~/.local/bin/rambox"
 alias nv="nvim"
 alias nc="NVIM_APPNAME=NvChad nvim"
 
-set -x PATH $PATH ~/.local/bin
+# set environment variables
 
-#set PS1 '\[\e]133;k;start_kitty\a\]\[\e]133;A\a\]\[\e]133;k;end_kitty\a\]\[\] \[\]\[\]quythuong@ArchLinux \[\]\[\]~ \[\]\[\]❯\[\]\[\] \[\e]133;k;start_suffix_kitty\a\]\[\e[5 q\]\[\e]2;\w\a\]\[\e]133;k;end_suffix_kitty\a\]'
+fish_add_path ~/.local/bin
+
+	# eclipse
+fish_add_path ~/softwares/jee-2023-06/eclipse/
+	#jdk, maven and tomcat
+set -x JAVA_HOME /usr/lib/jvm/java-20-openjdk/
+set -x MAVEN_HOME ~/java_web_tools/apache-maven-3.9.4/
 
 oh-my-posh init fish --config ~/.config/.poshthemes/catppuccin_mocha-modded.omp.json | source
 #starship init fish | source 
 source ~/.local/share/icons-in-terminal/icons.fish
+
+
