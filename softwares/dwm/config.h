@@ -1,7 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-/* appearance */
 #include<X11/XF86keysym.h>
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 3;        /* gaps between windows */
@@ -13,7 +12,6 @@ static const unsigned int gappov    = 4;       /* vert outer gap between windows
 
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const unsigned int snap      = 28;       /* snap pixel */
-static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -28,8 +26,8 @@ static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 
-static const char *fonts[]          = {"DejaVuSansMono Nerd Font:size=12:antialias=true:autohint=true:style:Bold"};
-//static const char *fonts[]          = {"Cascadia Code:size=12:antialias=true:autohint=true:style:Bold"};
+static const char *fonts[]          = {"FiraCode Nerd Font:size=12:antialias=true:autohint=true:style:Bold"};
+// static const char *fonts[]          = {"Ac437 Acer VGA 8x8:size=12:antialias=true:autohint=true:style:Bold"};
 static const char dmenufont[]       = "Hack Nerd Font:size=12:style=Bold";
 
 #include "/home/quythuong/.cache/wal/colors-wal-dwm.h"
@@ -43,13 +41,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "kitty",   NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
-	{ NULL,      NULL,     "StFloat",      0,         1,          -1,          0,        -1 },
+	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ NULL,      NULL,     "StFloat",     0,            1,          -1}
 };
 
 /* layout(s) */
@@ -103,11 +98,12 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *termcmd_st_float[]  = { "st", "-T", "StFloat", "-g", "75x22+500+270", NULL };
 static const char *termcmd_st_float_bc[]  = { "st", "-T", "StFloat", "-g", "75x22+500+270", "bc", "-q", "-l", NULL };
-static const char *browser[]  = { "microsoft-edge-stable", NULL };
+static const char *browser[]  = { "firefox", NULL };
 static const char *screenCapture[]  = { "flameshot", "gui", NULL };
-static const char *rofi_launcher_run[]  = { "/home/quythuong/.config/rofi/launchers/type-3/launcher_run.sh", NULL };
+// static const char *rofi_launcher_run[]  = { "/home/quythuong/.config/rofi/launchers/type-3/launcher_run.sh", NULL };
+static const char *powermenu[]  = { "/home/quythuong/.config/rofi/powermenu/type-3/powermenu.sh", NULL };
 static const char *rofi_launcher_drun[]  = { "/home/quythuong/.config/rofi/launchers/type-3/launcher_drun.sh", NULL };
-static const char *UI_file_manager[]  = { "thunar", NULL };
+static const char *UI_file_manager[]  = { "nautilus", NULL };
 static const char *zoom_screen[]  = { "/home/quythuong/.local/bin/zoom.sh", NULL };
 
 
@@ -124,9 +120,9 @@ static const Key keys[] = {
     { 0,	        XF86XK_MonBrightnessDown,             spawn,	      {.v = light_down} },
     { MODKEY,			            XK_F8,                spawn,	      {.v = light_up} },
     { MODKEY,			            XK_F7,	              spawn,	      {.v = light_down} },
-    { MODKEY,                       XK_bracketleft,       spawn,          {.v = rofi_launcher_run } },
-    { MODKEY,                       XK_bracketright,      spawn,          {.v = dmenucmd} },
+    { MODKEY,                       XK_bracketleft,       spawn,          {.v = dmenucmd} },
     { MODKEY,                       XK_p,                 spawn,          {.v = rofi_launcher_drun } },
+	{ Mod4Mask,                     XK_l,                 spawn,          {.v = powermenu } },
 	{ MODKEY|ShiftMask,             XK_Return,            spawn,          {.v = termcmd } },
 	{ Mod4Mask,                     XK_backslash,         spawn,          {.v = browser } },
 
@@ -137,7 +133,7 @@ static const Key keys[] = {
 	{ Mod4Mask,                     XK_z,                  spawn,         {.v = zoom_screen} },
 
 	{ MODKEY,                       XK_b,                 togglebar,      {0} },
-	{ MODKEY,                       XK_Return,                 focusstack,     {.i = +1 } },
+	//{ MODKEY,                       XK_Return,                 focusstack,     {.i = +1 } },
 	// { MODKEY,                       XK_k,                 focusstack,     {.i = -1 } },
 	// { MODKEY,                       XK_i,                 incnmaster,     {.i = +1 } },
 	STACKKEYS(MODKEY,                          focus)

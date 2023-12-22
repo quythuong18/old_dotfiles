@@ -1,7 +1,9 @@
 [user]
 	email = quythuong0108@gmail.com
-	name = Quy Thuong
+	name = 'Quy Thuong'
 [core]
-	editor = nvim
+	editor = neovim --nofork
 [color]
 	ui = true
+[credential]
+	helper = cache

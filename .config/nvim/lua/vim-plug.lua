@@ -99,7 +99,12 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'rcarriga/nvim-notify'
 
 -- Markdown preview
-Plug 'iamcco/markdown-preview.nvim'
+Plug('iamcco/markdown-preview.nvim', {
+    ['do'] = function()
+        vim.fn["mkdp#util#install"]()
+    end,
+    ['for'] = {'markdown', 'vim-plug'}
+})
 
 -- Indentation guides
 Plug 'lukas-reineke/indent-blankline.nvim'

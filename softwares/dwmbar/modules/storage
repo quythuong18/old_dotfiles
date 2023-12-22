@@ -2,6 +2,7 @@
 
 
 PREFIX=''
+PREFIX=''
 
 df_check_location='/home'
 

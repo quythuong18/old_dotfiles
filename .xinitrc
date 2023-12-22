@@ -1,12 +1,7 @@
 #!/bin/sh
 
-# monitor for desktop
-conky &
-
-# go tieng Viet
-ibus start &
-#flameshot: snipping tool
-flameshot &
+#Compositor
+picom --experimental-backends &
 
 #wallpaper
 nitrogen --restore &
@@ -14,9 +9,17 @@ nitrogen --restore &
 #DWM status
 /home/quythuong/softwares/dwmbar/dwmbar &
 
-#Compositor
-picom --experimental-backends &
+# go tieng Viet
+ibus start &
+#flameshot: snipping tool
+flameshot &
+
+# monitor for desktop
+conky -q -p 1 &
 
 #WM execute
+export GLFW_IM_MODULE=ibus
 exec dwm
-
+# polybar &
+# sxhkd &
+# exec bspwm

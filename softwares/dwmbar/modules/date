@@ -2,7 +2,7 @@
 
 # Prints out the date
 
-PREFIX=''
+PREFIX=''
 
 get_date()
 {

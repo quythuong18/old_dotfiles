@@ -18,6 +18,7 @@ map('n', '<C-s>', ':w<CR>')
 -- Copy all
 map('n', '<C-a>', ':%y+<CR>')
 map('v', '<C-c>', ':yank+<CR>')
+
 -- clear search highlighting
 map('n', '<leader>h', ':nohl<CR>')
 

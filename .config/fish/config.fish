@@ -44,9 +44,16 @@ fish_add_path ~/softwares/jee-2023-06/eclipse/
 	#jdk, maven and tomcat
 set -x JAVA_HOME /usr/lib/jvm/java-20-openjdk/
 set -x MAVEN_HOME ~/java_web_tools/apache-maven-3.9.4/
+set -x env GLFW_IM_MODULE ibus
 
 oh-my-posh init fish --config ~/.config/.poshthemes/catppuccin_mocha-modded.omp.json | source
 #starship init fish | source 
 source ~/.local/share/icons-in-terminal/icons.fish
+
+# miniconda3
+# if test -f /opt/miniconda3/etc/profile.d/conda.sh
+#     source /opt/miniconda3/etc/profile.d/conda.sh
+# end
+
 
 

@@ -23,15 +23,8 @@ Plug 'sainnhe/sonokai'
 call plug#end()
 
 
-
 " Press jj  to return to normal mode when in insert mode
 inoremap jj <ESC>
-
-" Press nn to return to normal mode when in visual mode
-vnoremap nn <ESC>
-
-" Press jj when in Command mode, to go back to normal mode
-cnoremap jj <ESC>
 
 " Press ff when in normal mode, to save file
 nnoremap ff :w<CR>
@@ -54,6 +47,9 @@ set number
 set relativenumber
 set mouse=a
 set autoindent
+" set clipboard^=unamed
+set clipboard=unnamedplus
+
 
 
 set t_Co=256
@@ -65,6 +61,7 @@ set cursorline
 set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
+
 
 
 filetype plugin on

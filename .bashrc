@@ -9,16 +9,18 @@ alias nf='neofetch'
 alias cls='clear'
 alias ll='logo-ls -l'
 alias lf='lfrun'
-alias pacman='sudo pacman'
+#alias pacman='sudo pacman'
 alias gitdot='/usr/bin/git --git-dir=/home/quythuong/.dotfiles/ --work-tree=/home/quythuong'
-alias fm6tmod='~/softwares/fm6000 -f ~/others/arch_logo.txt -o "Arch Linux" -d "dwm" -c green'
 alias say='fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n'
 alias py='python'
 alias webcam='mpv /dev/video0'
-alias rambox='~/softwares/rambox'
-alias connect_earphone='~/softwares/connect_earphone.sh'
+alias rambox='~/.local/bin/rambox'
+alias connect_earphone='~/.local/bin/connect_earphone.sh'
 alias nv="nvim"
 alias nc="NVIM_APPNAME=NvChad nvim"
+
+alias livefde="reload-live-server --browser=firefox-developer-edition"
+alias livef="reload-live-server --browser=firefox"
 
 
 #PS1='[\u@\h \W]\$ '
@@ -28,5 +30,6 @@ alias nc="NVIM_APPNAME=NvChad nvim"
 eval "$(oh-my-posh init bash --config ~/.config/.poshthemes/catppuccin_mocha-modded.omp.json)"
 
 source ~/.local/share/icons-in-terminal/icons_bash.sh
-fm6tmod
-. ~/softwares/z.sh
+. ~/.local/bin/z.sh
+
+
